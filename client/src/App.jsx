@@ -4,6 +4,7 @@ import Landing from "./pages/Landing";
 import Startup from "./pages/Startup";
 import Loader from '@/usables/Loader'
 import "./App.css";
+import Investor from "./pages/Investor";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -26,6 +27,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/startup" element={<Startup />} />
+            <Route path="/investor" element={<Investor />} />
           </Routes>
         </BrowserRouter>
       )}
