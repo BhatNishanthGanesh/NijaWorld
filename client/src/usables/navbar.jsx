@@ -9,11 +9,14 @@ const Navbar = ({ scrollToContact }) => {
   const navigate = useNavigate();
 
   const handleNavigation = (e, item) => {
+    e.preventDefault(); // Prevent default anchor behavior
+
     if (item === "Contact") {
-      e.preventDefault(); // Prevent default anchor behavior
       scrollToContact(); // Scroll to the Contact section
     } else if (item === "Startup") {
-      navigate("/startup"); // Navigate to the Startup page
+      navigate("/startup"); // Navigate to Startup page
+    } else if (item === "Investor") {
+      navigate("/investor"); // Navigate to Investor page
     }
   };
 
@@ -27,7 +30,7 @@ const Navbar = ({ scrollToContact }) => {
           className="text-2xl font-bold"
         >
           <a href="/">
-          <img src="2to10X.png" height={80} width={80} alt="Logo" />
+            <img src="2to10X.png" height={80} width={80} alt="Logo" />
           </a>
         </motion.div>
 
