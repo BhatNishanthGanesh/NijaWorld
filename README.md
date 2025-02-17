@@ -1,1 +1,1 @@
-"#One2TenX" 
+#One2TenX
