@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Navbar from "@/usables/navbar";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react"; // Add useRef
 import { motion } from "framer-motion";
 import { SwipeCarousel } from "@/usables/carousel";
 import { DrawCircleText } from "@/usables/DrawCircle";
@@ -11,6 +11,12 @@ import Footer from "@/usables/Footer";
 
 const Landing = () => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const contactRef = useRef(null); // Create a ref for the footer section
+
+  // Function to scroll to the contact section
+  const scrollToContact = () => {
+    contactRef.current.scrollIntoView({ behavior: "smooth" });
+  };
 
   // Set page load complete after 1 second (you can adjust this delay)
   useEffect(() => {
@@ -22,7 +28,9 @@ const Landing = () => {
 
   return (
     <>
-      <Navbar />
+      {/* Pass the scrollToContact function to Navbar */}
+      <Navbar scrollToContact={scrollToContact} />
+
       <section className="mt-20 pt-10">
         <div className="grid p-5 md:p-10 grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <motion.div
@@ -51,6 +59,7 @@ const Landing = () => {
           </div>
         </div>
       </section>
+
       <section className="bg-[#272757] pt-4">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -86,6 +95,7 @@ const Landing = () => {
           </motion.div>
         </div>
       </section>
+
       <section className="bg-white pt-5 pb-10">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -178,6 +188,7 @@ const Landing = () => {
           </motion.div>
         </div>
       </section>
+
       <section className=" bg-[#272757]">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -189,10 +200,15 @@ const Landing = () => {
         </motion.h1>
         <FoundersFirst />
       </section>
+
       <section className="bg-white">
         <FoundersVision />
       </section>
-      <Footer/>
+
+      {/* Add a ref to the footer section */}
+      <section ref={contactRef}>
+        <Footer />
+      </section>
     </>
   );
 };

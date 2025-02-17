@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Landing from "./pages/Landing";
+import Startup from "./pages/Startup";
 import Loader from '@/usables/Loader'
 import "./App.css";
 
@@ -24,6 +25,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Landing />} />
+            <Route path="/startup" element={<Startup />} />
           </Routes>
         </BrowserRouter>
       )}
