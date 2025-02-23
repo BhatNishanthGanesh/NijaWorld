@@ -50,7 +50,7 @@ const Landing = () => {
               too much to serendipity—limiting opportunities for exceptional
               founders outside established circles.
             </p>
-            <NeuButton text="Get Started" link="/get-started" />
+            <NeuButton text="Get Started" link="/signup" />
           </motion.div>
 
           {/* Carousel Section */}
@@ -153,7 +153,7 @@ const Landing = () => {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: false }}
               >
-                <NeuButton text="Get Started" link="/get-started" />
+                <NeuButton text="Get Started" link="/Signup" />
               </motion.div>
 
               <motion.div
